@@ -1,4 +1,5 @@
 ---
+import AppScreenshot from '../components/AppScreenshot';
 ---
 <html lang="en">
 <head>
@@ -9,22 +10,44 @@
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <main>
     <img src="/icon.png" alt="" class="icon" />
     <h1 class="name">Green Tea</h1>
     <p class="tagline">Knowledge work, caffeinated.</p>
-    <a href="https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg" class="download">
+    <a id="download-btn" href="https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg" class="download">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
         <polyline points="7 10 12 15 17 10" />
         <line x1="12" y1="15" x2="12" y2="3" />
       </svg>
-      Download for macOS
+      <span id="download-label">Download for macOS</span>
     </a>
-    <span class="meta">Apple Silicon &middot; v0.1</span>
+    <a id="alt-download" href="#" class="alt-link"></a>
+    <script>
+      ;(function () {
+        var ua = navigator.userAgent
+        var isWin = ua.indexOf('Win') !== -1
+        var btn = document.getElementById('download-btn')
+        var label = document.getElementById('download-label')
+        var alt = document.getElementById('alt-download')
+        if (isWin) {
+          btn.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea-setup.exe'
+          label.textContent = 'Download for Windows'
+          alt.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg'
+          alt.textContent = 'Also available for macOS'
+        } else {
+          alt.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea-setup.exe'
+          alt.textContent = 'Also available for Windows'
+        }
+      })()
+    </script>
+
+    <div class="screenshot-wrapper">
+      <AppScreenshot client:visible />
+    </div>
   </main>
   <footer>green tea</footer>
 </body>
@@ -42,14 +65,15 @@
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #1e2b27;
-    color: #dde3e0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: max(6vh, 4rem);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -58,9 +82,14 @@
     flex-direction: column;
     align-items: center;
     gap: 1.75rem;
+    padding-bottom: 6rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .icon {
+    margin-top: max(8vh, 4rem);
     width: 120px;
     height: 120px;
     border-radius: 26px;
@@ -73,16 +102,18 @@
   }
 
   .name {
-    font-size: 2rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.75rem;
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: #e2e6e4;
+    color: #111111;
+    margin-top: -0.75rem;
   }
 
   .tagline {
     font-size: 1.0625rem;
     font-weight: 300;
-    color: #6b7d76;
+    color: #6b7472;
     letter-spacing: 0.01em;
     margin-top: -0.5rem;
   }
@@ -92,10 +123,10 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    background: rgba(61, 154, 114, 0.1);
-    border: 1px solid rgba(61, 154, 114, 0.18);
+    background: rgba(61, 154, 114, 0.08);
+    border: 1px solid rgba(61, 154, 114, 0.25);
     border-radius: 8px;
-    color: #5ab88a;
+    color: #3d9a72;
     font-family: inherit;
     font-size: 0.9375rem;
     font-weight: 400;
@@ -106,21 +137,33 @@
   }
 
   .download:hover {
-    background: rgba(61, 154, 114, 0.16);
-    border-color: rgba(61, 154, 114, 0.3);
+    background: rgba(61, 154, 114, 0.14);
+    border-color: rgba(61, 154, 114, 0.35);
   }
 
-  .meta {
+  .alt-link {
     font-size: 0.8125rem;
-    color: #475550;
-    letter-spacing: 0.02em;
+    color: #999896;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+  }
+
+  .alt-link:hover {
+    color: #3d9a72;
+  }
+
+  .screenshot-wrapper {
+    width: 100%;
+    max-width: 1240px;
+    margin-top: 1rem;
   }
 
   footer {
     position: fixed;
     bottom: 2rem;
     font-size: 0.6875rem;
-    color: #333f3a;
+    color: #c8c6c4;
     letter-spacing: 0.05em;
   }
 </style>
