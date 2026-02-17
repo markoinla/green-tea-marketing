@@ -1,5 +1,9 @@
 ---
 import AppScreenshot from '../components/AppScreenshot';
+import Features from '../components/Features';
+import TextBlock from '../components/TextBlock';
+import SkillsMockup from '../components/SkillsMockup';
+import ScheduledTasksMockup from '../components/ScheduledTasksMockup';
 ---
 <html lang="en">
 <head>
@@ -16,7 +20,7 @@ import AppScreenshot from '../components/AppScreenshot';
   <main>
     <img src="/icon.png" alt="" class="icon" />
     <h1 class="name">Green Tea</h1>
-    <p class="tagline">Knowledge work, caffeinated.</p>
+    <p class="tagline">A notes app that does work for you.</p>
     <a id="download-btn" href="https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg" class="download">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -48,6 +52,53 @@ import AppScreenshot from '../components/AppScreenshot';
     <div class="screenshot-wrapper">
       <AppScreenshot client:visible />
     </div>
+
+    <Features client:visible />
+
+    <TextBlock
+      client:visible
+      label="About"
+      heading="Why another notes app?"
+      body={[
+        "I'm a marketing executive, not an engineer by training. But I've been coding on the side, and along the way I discovered that the coding agents developers use to write software are incredibly good at marketing and sales work too. Competitor research, campaign briefs, content generation, daily briefings, pipeline analysis. These agents can do all of it.",
+        "The problem was there was no simple way to use them. Every tool required a terminal and technical setup. So I built Green Tea, a notes app with a professional-grade coding agent built in, designed for people like me. I use it every day for my own work. Hopefully you'll find it just as useful.",
+      ]}
+      buttonText="Read the docs"
+      buttonHref="https://github.com/markoinla/green-tea-releases"
+    />
+
+    <TextBlock
+      client:visible
+      label="Privacy"
+      heading="Your data stays on your computer."
+      body={[
+        "Green Tea is a desktop app. Your notes, files, and everything your AI agent works on lives entirely on your machine. There's no cloud component, no account to create, no data leaving your computer unless you tell it to.",
+        "That means full ownership of your data, no syncing surprises, and it works offline. Your work is yours.",
+      ]}
+    />
+
+    <TextBlock
+      client:visible
+      label="Extensible"
+      heading="A notes app that builds itself."
+      body={[
+        "Ask Green Tea to build you a new skill and it will. Need a tool that pulls your Google Analytics data into a weekly summary? Tell it. Want an automation that monitors competitor pricing and flags changes? Just describe it. Green Tea's AI agent can write its own tools, right inside the app.",
+        "You can also connect MCP servers to bring in external data sources, APIs, and services. It's the same extensibility that developers rely on, but you never have to touch a terminal. Green Tea opens up an entire coding world to non-technical users, letting you build exactly the workflows you need without writing a line of code yourself.",
+      ]}
+    >
+      <SkillsMockup client:visible />
+    </TextBlock>
+    <TextBlock
+      client:visible
+      label="Automation"
+      heading="Your AI teammate never sleeps."
+      body={[
+        "Set up scheduled tasks that run on autopilot. Pull a daily morning briefing from your calendar and email, compile meeting action items after every standup, or track industry news on topics you care about. Green Tea handles it on a schedule you define.",
+        "Every task runs locally on your machine, writes directly into your notes, and is ready for you when you sit down to work. No dashboards to check, no tabs to keep open. Just the information you need, exactly when you need it.",
+      ]}
+    >
+      <ScheduledTasksMockup client:visible />
+    </TextBlock>
   </main>
   <footer>green tea</footer>
 </body>
@@ -103,7 +154,7 @@ import AppScreenshot from '../components/AppScreenshot';
 
   .name {
     font-family: 'Outfit', sans-serif;
-    font-size: 2.75rem;
+    font-size: 3.25rem;
     font-weight: 500;
     letter-spacing: -0.02em;
     color: #111111;
@@ -111,8 +162,8 @@ import AppScreenshot from '../components/AppScreenshot';
   }
 
   .tagline {
-    font-size: 1.0625rem;
-    font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 400;
     color: #6b7472;
     letter-spacing: 0.01em;
     margin-top: -0.5rem;

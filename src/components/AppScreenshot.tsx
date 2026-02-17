@@ -4,6 +4,14 @@ import type { CSSProperties } from 'react';
 export default function AppScreenshot() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+
+  const typewriterParagraphs = [
+    "I've spent the last year vibe coding... a lot of vibe coding. I built tools for my sister to manage her flower business, games for my nephews, and about a dozen other projects that solve very specific problems in my work and life.",
+    "Here's what I realized: we're entering an era where software can be built for an audience of one. This is more powerful than we realize at this moment. Software that solves your exact problem, built the way you want it, for the price of your time.",
+  ];
+  const totalChars = typewriterParagraphs.join('').length;
+  const typewriterDone = charIndex >= totalChars;
 
   useEffect(() => {
     const el = ref.current;
@@ -15,6 +23,13 @@ export default function AppScreenshot() {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!visible || charIndex >= totalChars) return;
+    const delay = charIndex === 0 ? 1200 : Math.random() * 8 + 4;
+    const t = setTimeout(() => setCharIndex((c) => Math.min(c + 1, totalChars)), delay);
+    return () => clearTimeout(t);
+  }, [visible, charIndex, totalChars]);
 
   const sans = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
   const serif = "'Georgia', 'Times New Roman', serif";
@@ -383,12 +398,82 @@ export default function AppScreenshot() {
                 We're entering an era where software can be built for an audience of one — and it's changing how we think about software, AI tools and knowledge work.
               </p>
               <hr style={{ border: 'none', borderTop: '1px solid #e8e6e4', margin: '14px 0' }} />
-              <p style={{ fontSize: 11.5, color: '#333', marginBottom: 14, lineHeight: 1.7 }}>
-                I've spent the last year <em>vibe coding...</em> a lot of vibe coding. I built tools for my sister to manage her flower business, games for my nephews, and about a dozen other projects that solve very specific problems in my work and life.
-              </p>
-              <p style={{ fontSize: 11.5, color: '#333', marginBottom: 14, lineHeight: 1.7 }}>
-                Here's what I realized: we're entering an era where software can be built for an audience of one. This is more powerful than we realize at this moment. Software that solves your exact problem, built the way you want it, for the price of your time.
-              </p>
+
+              <style>{`@keyframes gtPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } @keyframes gtBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }`}</style>
+
+              {/* Bordered editing region */}
+              <div
+                style={{
+                  position: 'relative',
+                  borderLeft: charIndex > 0 ? `2px solid ${typewriterDone ? '#c8e6d4' : '#3d9a72'}` : '2px solid transparent',
+                  paddingLeft: 12,
+                  marginLeft: -14,
+                  transition: 'border-color 0.4s ease',
+                }}
+              >
+                {/* Badge */}
+                {charIndex > 0 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: -8,
+                      left: -2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 4,
+                      background: typewriterDone ? '#f6f5f4' : '#f0faf4',
+                      border: `1px solid ${typewriterDone ? '#e0dedc' : '#c8e6d4'}`,
+                      borderRadius: 4,
+                      padding: '1px 7px',
+                      fontSize: 8.5,
+                      fontWeight: 500,
+                      fontFamily: sans,
+                      color: typewriterDone ? '#999' : '#3d9a72',
+                      whiteSpace: 'nowrap',
+                      transition: 'all 0.4s ease',
+                    }}
+                  >
+                    {typewriterDone ? (
+                      <>
+                        <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#3d9a72" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                        Edit complete
+                      </>
+                    ) : (
+                      <>
+                        <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#3d9a72', display: 'inline-block', animation: 'gtPulse 1.2s ease-in-out infinite' }} />
+                        Editing...
+                      </>
+                    )}
+                  </div>
+                )}
+
+                {/* Typewriter paragraphs */}
+                {typewriterParagraphs.map((text, pi) => {
+                  const prevLen = typewriterParagraphs.slice(0, pi).join('').length;
+                  const visibleCount = Math.max(0, Math.min(charIndex - prevLen, text.length));
+                  const showCursor = !typewriterDone && charIndex >= prevLen && charIndex < prevLen + text.length;
+                  if (charIndex <= prevLen && pi > 0) return null;
+                  return (
+                    <p key={pi} style={{ fontSize: 11.5, color: '#333', marginBottom: 14, lineHeight: 1.7, position: 'relative' }}>
+                      <span>{text.slice(0, visibleCount)}</span>
+                      {showCursor && (
+                        <span
+                          style={{
+                            display: 'inline-block',
+                            width: 1.5,
+                            height: 13,
+                            background: '#3d9a72',
+                            marginLeft: 1,
+                            verticalAlign: 'text-bottom',
+                            animation: 'gtBlink 0.6s step-end infinite',
+                          }}
+                        />
+                      )}
+                      <span style={{ color: 'transparent' }}>{text.slice(visibleCount)}</span>
+                    </p>
+                  );
+                })}
+              </div>
               <h3
                 style={{
                   fontFamily: serif,
@@ -510,55 +595,95 @@ export default function AppScreenshot() {
                 lineHeight: 1.5,
               }}
             >
-              {/* Truncated earlier message */}
-              <div style={{ color: '#444' }}>
-                <ul style={{ margin: 0, paddingLeft: 16 }}>
-                  <li style={{ marginBottom: 3 }}>
-                    Ended with a wink: "so you don't have to" — reinforces the "works while you sleep" concept with a light touch
-                  </li>
-                </ul>
-                <p style={{ margin: '8px 0 0', color: '#444' }}>Want me to apply this edit to the document?</p>
-              </div>
-
-              {/* User "yes" bubble */}
-              <div style={{ alignSelf: 'flex-end' }}>
-                <span
-                  style={{
-                    background: '#eeedeb',
-                    borderRadius: 9,
-                    padding: '4px 12px',
-                    fontSize: 10.5,
-                    color: '#333',
-                  }}
-                >
-                  yes
-                </span>
-              </div>
-
-              {/* Actions collapsible */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#999', padding: '2px 0' }}>
-                <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-                3 actions — Proposing changes to Green Tea...
-              </div>
-
-              {/* Assistant result */}
-              <div style={{ color: '#444' }}>
-                <p style={{ margin: '0 0 8px', fontWeight: 500 }}>Done! The section now reads:</p>
+              {[
+                // bubble 0 - assistant
+                { type: 'assistant' as const, delay: 0.3, content: (
+                  <div style={{ color: '#444' }}>
+                    <ul style={{ margin: 0, paddingLeft: 16 }}>
+                      <li style={{ marginBottom: 3 }}>
+                        Ended with a wink: "so you don't have to" — reinforces the "works while you sleep" concept with a light touch
+                      </li>
+                    </ul>
+                    <p style={{ margin: '8px 0 0' }}>Want me to apply this edit to the document?</p>
+                  </div>
+                )},
+                // bubble 1 - user
+                { type: 'user' as const, delay: 0.9, content: 'yes' },
+                // bubble 2 - actions
+                { type: 'actions' as const, delay: 1.5, content: (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#999' }}>
+                    <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                    3 actions — Proposing changes to Green Tea...
+                  </div>
+                )},
+                // bubble 3 - assistant result
+                { type: 'assistant' as const, delay: 2.1, content: (
+                  <div style={{ color: '#444' }}>
+                    <p style={{ margin: '0 0 8px', fontWeight: 500 }}>Done! The section now reads:</p>
+                    <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 10px' }}>
+                      "Connect it to your email and calendar, and Green Tea becomes your daily briefing — know exactly what meetings you have and which emails are silently judging you. Convert docs to Word, pull insights from spreadsheets, automate your morning updates — all without leaving your notes."
+                    </div>
+                    <p style={{ margin: 0, lineHeight: 1.55 }}>
+                      The playful "silently judging you" line adds personality while still communicating the benefit.
+                    </p>
+                  </div>
+                )},
+                // bubble 4 - user
+                { type: 'user' as const, delay: 3.0, content: 'Can you also strengthen the intro paragraph? Make the hook more compelling.' },
+                // bubble 5 - assistant
+                { type: 'assistant' as const, delay: 3.8, content: (
+                  <div style={{ color: '#444' }}>
+                    <p style={{ margin: '0 0 6px', fontWeight: 500 }}>Here's a revised intro:</p>
+                    <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 8px' }}>
+                      "Most note apps are where ideas go to die. Green Tea is where they come alive — an AI-native workspace that reads your documents, drafts your emails, and automates the busywork you keep putting off."
+                    </div>
+                    <p style={{ margin: 0, lineHeight: 1.55 }}>
+                      This version leads with a provocation and immediately contrasts it with what Green Tea does differently. Want me to apply it?
+                    </p>
+                  </div>
+                )},
+                // bubble 6 - user
+                { type: 'user' as const, delay: 4.6, content: 'Yes, apply it. Also make the CTA at the end more urgent.' },
+                // bubble 7 - actions
+                { type: 'actions' as const, delay: 5.2, content: (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#999' }}>
+                    <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                    2 actions — Editing Green Tea Blog Post...
+                  </div>
+                )},
+                // bubble 8 - assistant
+                { type: 'assistant' as const, delay: 5.8, content: (
+                  <div style={{ color: '#444' }}>
+                    <p style={{ margin: '0 0 6px', fontWeight: 500 }}>Both changes applied. The new CTA reads:</p>
+                    <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 8px' }}>
+                      "Download Green Tea today — your first daily briefing is waiting for you tomorrow morning."
+                    </div>
+                    <p style={{ margin: 0, lineHeight: 1.55 }}>
+                      Short, action-oriented, and creates anticipation. The post is looking really strong now — ready to publish?
+                    </p>
+                  </div>
+                )},
+              ].map((bubble, i) => (
                 <div
+                  key={i}
                   style={{
-                    fontStyle: 'italic',
-                    color: '#3d9a72',
-                    lineHeight: 1.55,
-                    fontSize: 10,
-                    margin: '0 0 10px',
+                    opacity: visible ? 1 : 0,
+                    transform: visible ? 'translateY(0)' : 'translateY(8px)',
+                    transition: `opacity 0.5s ease ${bubble.delay}s, transform 0.5s ease ${bubble.delay}s`,
+                    ...(bubble.type === 'user' ? { alignSelf: 'flex-end' } : {}),
                   }}
                 >
-                  "Connect it to your email and calendar, and Green Tea becomes your daily briefing — know exactly what meetings you have and which emails are silently judging you. Convert docs to Word, pull insights from spreadsheets, automate your morning updates — all without leaving your notes. Think of it as a note app that works while you sleep, so you don't have to."
+                  {bubble.type === 'user' ? (
+                    <span style={{ background: '#eeedeb', borderRadius: 9, padding: '4px 12px', fontSize: 10.5, color: '#333', display: 'inline-block' }}>
+                      {bubble.content}
+                    </span>
+                  ) : bubble.type === 'actions' ? (
+                    bubble.content
+                  ) : (
+                    bubble.content
+                  )}
                 </div>
-                <p style={{ margin: 0, color: '#444', lineHeight: 1.55 }}>
-                  The playful "silently judging you" line adds some personality while still communicating the benefit. Want me to review the rest of the post or make any other changes?
-                </p>
-              </div>
+              ))}
             </div>
 
             {/* Input area */}
