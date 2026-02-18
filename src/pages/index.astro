@@ -4,6 +4,7 @@ import Features from '../components/Features';
 import TextBlock from '../components/TextBlock';
 import SkillsMockup from '../components/SkillsMockup';
 import ScheduledTasksMockup from '../components/ScheduledTasksMockup';
+import ModelsMockup from '../components/ModelsMockup';
 ---
 <html lang="en">
 <head>
@@ -98,6 +99,18 @@ import ScheduledTasksMockup from '../components/ScheduledTasksMockup';
       ]}
     >
       <ScheduledTasksMockup client:visible />
+    </TextBlock>
+
+    <TextBlock
+      client:visible
+      label="Models"
+      heading="Use any AI model you want."
+      body={[
+        "Green Tea is model agnostic. Out of the box it's powered by leading open-source models so you can start working immediately, no API key required.",
+        "Want more power or a specific provider? Drop in an Anthropic, OpenAI, or OpenRouter key and unlock dozens of other models. Switch between them anytime. You're never locked in.",
+      ]}
+    >
+      <ModelsMockup client:visible />
     </TextBlock>
   </main>
   <footer>green tea</footer>
