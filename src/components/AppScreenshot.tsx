@@ -71,14 +71,15 @@ export default function AppScreenshot() {
   return (
     <div
       ref={ref}
+      className="gt-mockup-root"
       style={{
-        width: '100%',
-        maxWidth: 1240,
+        width: 1240,
         margin: '0 auto',
         perspective: 1200,
         position: 'relative',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.7s ease',
+        transformOrigin: 'top center',
       }}
     >
       <div
@@ -777,6 +778,11 @@ export default function AppScreenshot() {
           }}
         />
       </div>
+      <style>{`
+        @media (max-width: 1240px) {
+          .gt-mockup-root { transform: scale(calc(100vw / 1240)); }
+        }
+      `}</style>
     </div>
   );
 }

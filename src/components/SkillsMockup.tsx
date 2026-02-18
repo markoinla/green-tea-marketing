@@ -30,8 +30,9 @@ export default function SkillsMockup() {
       pointerEvents: 'none' as const,
       userSelect: 'none' as const,
     }}>
+      <style>{`@media (max-width: 640px) { .skills-mockup-sidebar { display: none !important; } }`}</style>
       {/* Sidebar */}
-      <div style={{
+      <div className="skills-mockup-sidebar" style={{
         width: '160px',
         flexShrink: 0,
         borderRight: '1px solid #e5e5e5',

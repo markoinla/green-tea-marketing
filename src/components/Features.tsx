@@ -3,23 +3,23 @@ import { Brain, Gem, Wrench, Clock, ShieldCheck } from 'lucide-react';
 const features = [
   {
     icon: Brain,
-    title: 'Agentic AI',
+    title: 'Agents within your workflows',
     desc: "Not just chat. Green Tea's AI does the work while you focus on something else. It runs tasks in the background, builds automations, and works while you sleep.",
   },
   {
     icon: Gem,
-    title: 'Professional-Grade AI',
+    title: 'Code without the complexity',
     desc: 'The same powerful AI agent framework that developers use for coding, now in a notes app anyone can use. No technical setup, no prompts to learn, just tell it what you need.',
   },
   {
     icon: Wrench,
     title: 'Skills & Automations',
-    desc: 'Build your own custom AI tools and workflows. Teach your AI teammate new tricks. Make Green Tea work the way you work.',
+    desc: 'Build your own custom AI tools and workflows. Teach your AI coworker new tricks. Make Green Tea work the way you work.',
   },
   {
     icon: Clock,
     title: 'Scheduled Tasks',
-    desc: 'Your AI teammate never sleeps. Fetch the latest news on topics you track, pull daily briefings from your calendar or email, surface relevant updates automatically.',
+    desc: 'Your AI coworker never sleeps. Fetch the latest news on topics you track, pull daily briefings from your calendar or email, surface relevant updates automatically.',
   },
   {
     icon: ShieldCheck,
