@@ -23,7 +23,7 @@ import DownloadCTA from '../components/DownloadCTA';
     <img src="/icon.png" alt="" class="icon" />
     <h1 class="name">Green Tea</h1>
     <p class="tagline">A notes app that does work for you.</p>
-    <a id="download-btn" href="https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg" class="download">
+    <a id="download-btn" href="https://github.com/markoinla/green-tea/releases/latest/download/greentea.dmg" class="download">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
         <polyline points="7 10 12 15 17 10" />
@@ -54,12 +54,12 @@ import DownloadCTA from '../components/DownloadCTA';
         var label = document.getElementById('download-label')
         var alt = document.getElementById('alt-download')
         if (isWin) {
-          btn.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea-setup.exe'
+          btn.href = 'https://github.com/markoinla/green-tea/releases/latest/download/greentea-setup.exe'
           label.textContent = 'Download for Windows'
-          alt.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg'
+          alt.href = 'https://github.com/markoinla/green-tea/releases/latest/download/greentea.dmg'
           alt.textContent = 'Also available for macOS'
         } else {
-          alt.href = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea-setup.exe'
+          alt.href = 'https://github.com/markoinla/green-tea/releases/latest/download/greentea-setup.exe'
           alt.textContent = 'Also available for Windows'
         }
       })()
@@ -80,7 +80,7 @@ import DownloadCTA from '../components/DownloadCTA';
         "The problem was there was no simple way to use them. Every tool required a terminal and technical setup. So I built Green Tea, a notes app with a professional-grade coding agent built in, designed for people like me. I use it every day for my own work. Hopefully you'll find it just as useful.",
       ]}
       buttonText="Read the docs"
-      buttonHref="https://markoinla.github.io/green-tea-releases/"
+      buttonHref="https://markoinla.github.io/green-tea/"
     />
 
     <TextBlock

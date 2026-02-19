@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const MAC_URL = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea.dmg';
-const WIN_URL = 'https://github.com/markoinla/green-tea-releases/releases/latest/download/greentea-setup.exe';
+const MAC_URL = 'https://github.com/markoinla/green-tea/releases/latest/download/greentea.dmg';
+const WIN_URL = 'https://github.com/markoinla/green-tea/releases/latest/download/greentea-setup.exe';
 
 export default function DownloadCTA() {
   const [isWindows, setIsWindows] = useState(false);
