@@ -9,7 +9,7 @@ const features = [
   {
     icon: Brain,
     title: 'Agents that do the work',
-    desc: 'Not just chat. One coherent AI with full context of your workspace runs tasks in the background and works while you sleep.',
+    desc: 'Not just chat. One coherent AI with full context of your workspace runs tasks in the background — tell it to pull competitor pricing every Monday morning, and it will.',
   },
   {
     icon: Wrench,
@@ -53,7 +53,7 @@ export default function Features() {
           color: '#111111',
           letterSpacing: '-0.02em',
           margin: 0,
-        }}>An open source AI workspace, built on a serious coding agent.</h2>
+        }}>An open source AI workspace that does real work.</h2>
         <p style={{
           fontSize: '1.125rem',
           fontWeight: 400,
@@ -61,7 +61,7 @@ export default function Features() {
           letterSpacing: '0.01em',
           lineHeight: 1.7,
           marginTop: '0.75rem',
-        }}>Green Tea is built on the <a href="https://github.com/badlogic/pi-mono" target="_blank" rel="noopener noreferrer" style={{ color: '#3d9a72', textDecoration: 'none' }}>Pi coding agent</a>, the same coding agent that powers <a href="https://openclaw.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#3d9a72', textDecoration: 'none' }}>OpenClaw</a> and is trusted by developers worldwide. That means your notes app has professional-grade AI tools, reliability, and intelligence under the hood.</p>
+        }}>Green Tea runs on a professional-grade agent framework — the same kind of AI tooling that powers serious developer tools — wrapped in a notes app anyone can use. That means real work done for you, not just another chat box.</p>
       </div>
 
       {features.map(({ icon: Icon, title, desc }) => (

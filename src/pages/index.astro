@@ -70,19 +70,25 @@ import DownloadCTA from '../components/DownloadCTA';
       <AppScreenshot client:visible />
     </div>
 
-    <Features client:visible />
+    <section class="contrast">
+      <h2 class="contrast-heading">The only open source AI workspace built for knowledge workers.</h2>
+      <ul class="contrast-list">
+        <li>
+          <span class="contrast-vs">Unlike Obsidian's plugin AI,</span>
+          Green Tea's agent has full context of your entire workspace — not one note at a time.
+        </li>
+        <li>
+          <span class="contrast-vs">Unlike ChatGPT or Claude,</span>
+          it never starts from zero. Your projects, notes, and context are always there.
+        </li>
+        <li>
+          <span class="contrast-vs">Notion just gated AI agents behind a $20/mo plan.</span>
+          Green Tea's run locally, free, and open source.
+        </li>
+      </ul>
+    </section>
 
-    <TextBlock
-      client:visible
-      label="About"
-      heading="Why another notes app?"
-      body={[
-        "I'm a marketer, not an engineer by training. But I've been coding on the side, and along the way I discovered that the coding agents developers use to write software are incredibly good at marketing and sales work too. Competitor research, campaign briefs, content generation, daily briefings, pipeline analysis. These agents can do all of it.",
-        "The problem was there was no simple way to use them. Every tool required a terminal and technical setup. So I built Green Tea, an open source AI workspace with a professional-grade coding agent built in, designed for people like me. It's free, it runs entirely on your own machine, and the source is public so you never have to wonder what it does with your data. I use it every day for my own work. Hopefully you'll find it just as useful.",
-      ]}
-      buttonText="Read the docs"
-      buttonHref="https://markoinla.github.io/green-tea/"
-    />
+    <Features client:visible />
 
     <TextBlock
       client:visible
@@ -124,8 +130,8 @@ import DownloadCTA from '../components/DownloadCTA';
       label="Publish"
       heading="Research, write, publish — without leaving your notes."
       body={[
-        "Green Tea closes the whole loop in one place. Ask it to research a topic, turn the result into a report, dashboard, or set of slides, and publish it to a live, interactive link — all without touching a separate design, deck, or hosting tool.",
-        "Instead of emailing a static PDF, you hand a client or colleague a URL they can actually explore. The artifact is generated from your notes and stays in your workspace, so it's always yours to update.",
+        "Hand a client a URL, not a PDF. Green Tea turns your notes into a report, dashboard, or set of slides and publishes it to a live, interactive link they can actually explore — no separate design, deck, or hosting tool.",
+        "It closes the whole loop in one place: research a topic, generate the artifact, publish it. Everything is built from your notes and stays in your workspace, so it's always yours to update.",
       ]}
     />
 
@@ -140,6 +146,18 @@ import DownloadCTA from '../components/DownloadCTA';
     >
       <ModelsMockup client:visible />
     </TextBlock>
+
+    <TextBlock
+      client:visible
+      label="Why Green Tea"
+      heading="Most AI tools don't know you. Green Tea does."
+      body={[
+        "Every session with ChatGPT or Claude starts from scratch. You re-explain your projects, re-upload your docs, re-state the same context — every single time. Your notes app, meanwhile, can't actually do any of the work for you.",
+        "Green Tea fixes both. It's an open source AI workspace where the agent already knows your work and can act on it — research, briefs, analysis, monitoring. I built it because I needed it: I'm a marketer who codes on the side, and I found the agents developers use for software are just as good at knowledge work. There just wasn't a simple way to use them. Now there is.",
+      ]}
+      buttonText="Read the docs"
+      buttonHref="https://markoinla.github.io/green-tea/"
+    />
 
     <DownloadCTA client:visible />
   </main>
@@ -291,6 +309,56 @@ import DownloadCTA from '../components/DownloadCTA';
     width: 100%;
     max-width: 1240px;
     margin-top: 1rem;
+  }
+
+  .contrast {
+    width: 100%;
+    max-width: 760px;
+    margin-top: 7rem;
+    text-align: center;
+  }
+
+  .contrast-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: #111111;
+  }
+
+  .contrast-list {
+    list-style: none;
+    margin: 2rem auto 0;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .contrast-list li {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #6b7472;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .contrast-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #3d9a72;
+  }
+
+  .contrast-vs {
+    color: #111111;
+    font-weight: 500;
   }
 
   footer {

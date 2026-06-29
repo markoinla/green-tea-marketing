@@ -44,7 +44,7 @@ export default function DownloadCTA() {
         letterSpacing: '-0.02em',
         margin: 0,
         lineHeight: 1.2,
-      }}>Try Green Tea today.</h2>
+      }}>Download Green Tea.</h2>
 
       <p style={{
         fontSize: '1.0625rem',
@@ -54,7 +54,7 @@ export default function DownloadCTA() {
         lineHeight: 1.7,
         marginTop: '1rem',
         marginBottom: 0,
-      }}>Free, open source, and no account required.</p>
+      }}>Free, local, and ready to work while you sleep. No account required.</p>
 
       <div style={{
         display: 'flex',
