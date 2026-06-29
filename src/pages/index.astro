@@ -11,8 +11,8 @@ import DownloadCTA from '../components/DownloadCTA';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Green Tea</title>
-  <meta name="description" content="Knowledge work, caffeinated." />
+  <title>Green Tea — The open source AI workspace</title>
+  <meta name="description" content="Green Tea is the open source AI workspace for knowledge workers who want AI that actually does things — without giving up their data. Local-first, agentic, and free. Your notes, your agents, your data." />
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,8 @@ import DownloadCTA from '../components/DownloadCTA';
   <main>
     <img src="/icon.png" alt="" class="icon" />
     <h1 class="name">Green Tea</h1>
-    <p class="tagline">A notes app that does work for you.</p>
+    <p class="tagline">The open source AI workspace.</p>
+    <p class="subtagline">Your notes, your agents, your data.</p>
     <a id="download-btn" href="https://github.com/markoinla/green-tea/releases/latest/download/greentea.dmg" class="download">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -37,7 +38,7 @@ import DownloadCTA from '../components/DownloadCTA';
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
-        GitHub
+        Star on GitHub
       </a>
       <a href="https://www.linkedin.com/in/stankovicm/" class="social-btn" target="_blank" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -77,7 +78,7 @@ import DownloadCTA from '../components/DownloadCTA';
       heading="Why another notes app?"
       body={[
         "I'm a marketer, not an engineer by training. But I've been coding on the side, and along the way I discovered that the coding agents developers use to write software are incredibly good at marketing and sales work too. Competitor research, campaign briefs, content generation, daily briefings, pipeline analysis. These agents can do all of it.",
-        "The problem was there was no simple way to use them. Every tool required a terminal and technical setup. So I built Green Tea, a notes app with a professional-grade coding agent built in, designed for people like me. I use it every day for my own work. Hopefully you'll find it just as useful.",
+        "The problem was there was no simple way to use them. Every tool required a terminal and technical setup. So I built Green Tea, an open source AI workspace with a professional-grade coding agent built in, designed for people like me. It's free, it runs entirely on your own machine, and the source is public so you never have to wonder what it does with your data. I use it every day for my own work. Hopefully you'll find it just as useful.",
       ]}
       buttonText="Read the docs"
       buttonHref="https://markoinla.github.io/green-tea/"
@@ -85,12 +86,14 @@ import DownloadCTA from '../components/DownloadCTA';
 
     <TextBlock
       client:visible
-      label="Privacy"
-      heading="Your data stays on your computer."
+      label="Trust & Control"
+      heading="Your data. Your rules."
       body={[
-        "Green Tea is a desktop app. Your notes, files, and everything your AI agent works on lives entirely on your machine. There's no cloud component, no account to create, no data leaving your computer unless you tell it to.",
-        "That means full ownership of your data, no syncing surprises, and it works offline. Your work is yours.",
+        "Green Tea is open source and local-first. Your notes, files, and everything your AI agent works on lives entirely on your machine. There's no cloud component, no account to create, and no data leaving your computer unless you tell it to.",
+        "Because the source is public, anyone can audit exactly what the app does. Nothing trains on your notes, nothing is locked behind a vendor, and it works fully offline. Your work is yours.",
       ]}
+      buttonText="View the source on GitHub"
+      buttonHref="https://github.com/markoinla/green-tea"
     />
 
     <TextBlock
@@ -118,11 +121,21 @@ import DownloadCTA from '../components/DownloadCTA';
 
     <TextBlock
       client:visible
+      label="Publish"
+      heading="Research, write, publish — without leaving your notes."
+      body={[
+        "Green Tea closes the whole loop in one place. Ask it to research a topic, turn the result into a report, dashboard, or set of slides, and publish it to a live, interactive link — all without touching a separate design, deck, or hosting tool.",
+        "Instead of emailing a static PDF, you hand a client or colleague a URL they can actually explore. The artifact is generated from your notes and stays in your workspace, so it's always yours to update.",
+      ]}
+    />
+
+    <TextBlock
+      client:visible
       label="Models"
       heading="Use any AI model you want."
       body={[
         "Green Tea is model agnostic. Out of the box it's powered by leading open-source models so you can start working immediately, no API key required.",
-        "Want more power or a specific provider? Drop in an Anthropic, OpenAI, or OpenRouter key and unlock dozens of other models. Switch between them anytime. You're never locked in.",
+        "Want more power or a specific provider? Bring your own Anthropic, OpenAI, or OpenRouter key and unlock dozens of other models. You pay your provider directly with no markup, you control exactly which model sees your data, and you can switch anytime. You're never locked in.",
       ]}
     >
       <ModelsMockup client:visible />
@@ -199,6 +212,14 @@ import DownloadCTA from '../components/DownloadCTA';
     color: #6b7472;
     letter-spacing: 0.01em;
     margin-top: -0.5rem;
+  }
+
+  .subtagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #99a09e;
+    letter-spacing: 0.01em;
+    margin-top: -1.25rem;
   }
 
   .download {

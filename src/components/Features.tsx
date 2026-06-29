@@ -1,30 +1,35 @@
-import { Brain, Gem, Wrench, Clock, ShieldCheck } from 'lucide-react';
+import { GitFork, Brain, Wrench, Clock, Share2, KeyRound } from 'lucide-react';
 
 const features = [
   {
-    icon: Brain,
-    title: 'Agents within your workflows',
-    desc: "Not just chat. Green Tea runs tasks in the background, builds automations, and works while you sleep.",
+    icon: GitFork,
+    title: 'Open source & local-first',
+    desc: 'Auditable, no lock-in, self-hostable. Your notes and everything the AI touches stay on your machine, not someone else’s cloud.',
   },
   {
-    icon: Gem,
-    title: 'Code without the complexity',
-    desc: 'A powerful AI coding framework, now in a notes app anyone can use. No technical setup — just tell it what you need.',
+    icon: Brain,
+    title: 'Agents that do the work',
+    desc: 'Not just chat. One coherent AI with full context of your workspace runs tasks in the background and works while you sleep.',
   },
   {
     icon: Wrench,
-    title: 'Skills & Automations',
-    desc: 'Build custom AI tools and workflows. Teach your AI coworker new tricks and make it work the way you do.',
+    title: 'Skills & automations',
+    desc: 'Build custom AI tools and workflows. Teach your AI coworker new tricks and make it work the way you do — no terminal required.',
   },
   {
     icon: Clock,
-    title: 'Scheduled Tasks',
-    desc: 'Your AI coworker never sleeps. Fetch news, pull daily briefings, and surface relevant updates automatically.',
+    title: 'Scheduled tasks',
+    desc: 'Recurring research, monitoring, and briefings that run on autopilot and write straight into your notes.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Works Offline',
-    desc: 'All data stays on your device. Full ownership, works without internet.',
+    icon: Share2,
+    title: 'From notes to published',
+    desc: 'Turn notes into reports, dashboards, and slides, then publish to a live interactive link. Hand clients a URL, not a PDF.',
+  },
+  {
+    icon: KeyRound,
+    title: 'Any model, your key',
+    desc: 'Model agnostic and BYOK. Start with open models out of the box, or drop in your own key — you choose what processes your data, with no markup.',
   },
 ];
 
@@ -48,7 +53,7 @@ export default function Features() {
           color: '#111111',
           letterSpacing: '-0.02em',
           margin: 0,
-        }}>Notes built on a powerful agentic coding framework.</h2>
+        }}>An open source AI workspace, built on a serious coding agent.</h2>
         <p style={{
           fontSize: '1.125rem',
           fontWeight: 400,

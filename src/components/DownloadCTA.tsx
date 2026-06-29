@@ -54,7 +54,7 @@ export default function DownloadCTA() {
         lineHeight: 1.7,
         marginTop: '1rem',
         marginBottom: 0,
-      }}>Free to download. No account required.</p>
+      }}>Free, open source, and no account required.</p>
 
       <div style={{
         display: 'flex',
