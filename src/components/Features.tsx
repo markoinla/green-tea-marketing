@@ -4,17 +4,17 @@ const features = [
   {
     icon: GitFork,
     title: 'Open source & local-first',
-    desc: 'Auditable, no lock-in, self-hostable. Your notes and everything the AI touches stay on your machine, not someone else’s cloud.',
+    desc: 'Open, auditable, and self-hostable, with no lock-in. Your notes and everything the AI touches stay on your machine, not someone else’s cloud.',
   },
   {
     icon: Brain,
     title: 'Agents that do the work',
-    desc: 'Not just chat. One coherent AI with full context of your workspace runs tasks in the background — tell it to pull competitor pricing every Monday morning, and it will.',
+    desc: 'Not just chat. One AI that knows your whole workspace and runs tasks in the background. Tell it to pull competitor pricing every Monday morning and it will.',
   },
   {
     icon: Shapes,
     title: 'Canvas, tables & docs',
-    desc: 'Far more than notes. Excalidraw canvases, editable data tables, HTML dashboards, and PDFs live beside your notes — and the agent can generate Word, Excel, and slides too.',
+    desc: 'Far more than notes. Excalidraw canvases, editable tables, HTML dashboards, and PDFs sit right beside your notes. The agent can build Word, Excel, and slides too.',
   },
   {
     icon: Plug,
@@ -24,12 +24,12 @@ const features = [
   {
     icon: Wrench,
     title: 'Skills & automations',
-    desc: 'Build custom AI tools and workflows. Teach your AI coworker new tricks and make it work the way you do — no terminal required.',
+    desc: 'Build your own AI tools and workflows. Teach Green Tea new tricks and make it work the way you do. No terminal required.',
   },
   {
     icon: KeyRound,
     title: 'Any model, your key',
-    desc: 'Model agnostic and BYOK. Start with open models out of the box, or drop in your own key — you choose what processes your data, with no markup.',
+    desc: 'Bring your own key. Start with the open models that ship with the app, or plug in your own. You pick what touches your data, and you pay no markup.',
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Features() {
           letterSpacing: '0.01em',
           lineHeight: 1.7,
           marginTop: '0.75rem',
-        }}>Green Tea runs on a professional-grade agent framework — the same kind of AI tooling that powers serious developer tools — wrapped in a notes app anyone can use. That means real work done for you, not just another chat box.</p>
+        }}>Green Tea runs on a professional-grade agent framework, the same kind of AI tooling that powers serious developer tools, wrapped in a notes app anyone can use. It does real work for you instead of just chatting.</p>
       </div>
 
       {features.map(({ icon: Icon, title, desc }) => (

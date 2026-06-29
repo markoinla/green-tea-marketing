@@ -396,7 +396,7 @@ export default function AppScreenshot() {
                   lineHeight: 1.55,
                 }}
               >
-                We're entering an era where software can be built for an audience of one — and it's changing how we think about software, AI tools and knowledge work.
+                We're entering an era where software can be built for an audience of one, and it's changing how we think about software, AI tools and knowledge work.
               </p>
               <hr style={{ border: 'none', borderTop: '1px solid #e8e6e4', margin: '14px 0' }} />
 
@@ -494,7 +494,7 @@ export default function AppScreenshot() {
                 But as my vibe coding and daily work started blending together, I discovered something that initially surprised me: coding agents are incredible for knowledge work too.
               </p>
               <p style={{ fontSize: 11.5, color: '#333', marginBottom: 14, lineHeight: 1.7 }}>
-                They can search through dozens of files or websites to get context. Extract specific information to know what to change. Make precise edits to documents. I've been doing a lot of my writing in tools built for software engineers — VS Code, Cursor, even Claude Code — because they let AI work with me, not just at me.
+                They can search through dozens of files or websites to get context. Extract specific information to know what to change. Make precise edits to documents. I've been doing a lot of my writing in tools built for software engineers like VS Code, Cursor, and Claude Code, because they let AI work with me, not just at me.
               </p>
               <p style={{ fontSize: 11.5, color: '#333', marginBottom: 14, lineHeight: 1.7 }}>
                 I've tried to get my non-techy friends writing and building the same way. It always fails. There's too much terminal, too much git, too much friction.
@@ -515,7 +515,7 @@ export default function AppScreenshot() {
                 Introducing Green Tea
               </h3>
               <p style={{ fontSize: 11.5, color: '#333', lineHeight: 1.7 }}>
-                Green Tea is a notes app built on a powerful AI coding agent framework. It's a desktop app — all of your data lives on your computer. Full data privacy, no cloud or account required.
+                Green Tea is a notes app built on a powerful AI coding agent framework. It's a desktop app, so all of your data lives on your computer. Full data privacy, no cloud or account required.
               </p>
             </div>
           </div>
@@ -602,7 +602,7 @@ export default function AppScreenshot() {
                   <div style={{ color: '#444' }}>
                     <ul style={{ margin: 0, paddingLeft: 16 }}>
                       <li style={{ marginBottom: 3 }}>
-                        Ended with a wink: "so you don't have to" — reinforces the "works while you sleep" concept with a light touch
+                        Ended with a wink, "so you don't have to," which reinforces the "works while you sleep" concept with a light touch
                       </li>
                     </ul>
                     <p style={{ margin: '8px 0 0' }}>Want me to apply this edit to the document?</p>
@@ -614,7 +614,7 @@ export default function AppScreenshot() {
                 { type: 'actions' as const, delay: 1.5, content: (
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#999' }}>
                     <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-                    3 actions — Proposing changes to Green Tea...
+                    3 actions · Proposing changes to Green Tea...
                   </div>
                 )},
                 // bubble 3 - assistant result
@@ -622,7 +622,7 @@ export default function AppScreenshot() {
                   <div style={{ color: '#444' }}>
                     <p style={{ margin: '0 0 8px', fontWeight: 500 }}>Done! The section now reads:</p>
                     <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 10px' }}>
-                      "Connect it to your email and calendar, and Green Tea becomes your daily briefing — know exactly what meetings you have and which emails are silently judging you. Convert docs to Word, pull insights from spreadsheets, automate your morning updates — all without leaving your notes."
+                      "Connect it to your email and calendar, and Green Tea becomes your daily briefing, so you know exactly what meetings you have and which emails are silently judging you. Convert docs to Word, pull insights from spreadsheets, and automate your morning updates, all without leaving your notes."
                     </div>
                     <p style={{ margin: 0, lineHeight: 1.55 }}>
                       The playful "silently judging you" line adds personality while still communicating the benefit.
@@ -636,7 +636,7 @@ export default function AppScreenshot() {
                   <div style={{ color: '#444' }}>
                     <p style={{ margin: '0 0 6px', fontWeight: 500 }}>Here's a revised intro:</p>
                     <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 8px' }}>
-                      "Most note apps are where ideas go to die. Green Tea is where they come alive — an AI-native workspace that reads your documents, drafts your emails, and automates the busywork you keep putting off."
+                      "Most note apps are where ideas go to die. Green Tea is where they come alive, an AI-native workspace that reads your documents, drafts your emails, and automates the busywork you keep putting off."
                     </div>
                     <p style={{ margin: 0, lineHeight: 1.55 }}>
                       This version leads with a provocation and immediately contrasts it with what Green Tea does differently. Want me to apply it?
@@ -649,7 +649,7 @@ export default function AppScreenshot() {
                 { type: 'actions' as const, delay: 5.2, content: (
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#999' }}>
                     <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-                    2 actions — Editing Green Tea Blog Post...
+                    2 actions · Editing Green Tea Blog Post...
                   </div>
                 )},
                 // bubble 8 - assistant
@@ -657,10 +657,10 @@ export default function AppScreenshot() {
                   <div style={{ color: '#444' }}>
                     <p style={{ margin: '0 0 6px', fontWeight: 500 }}>Both changes applied. The new CTA reads:</p>
                     <div style={{ fontStyle: 'italic', color: '#3d9a72', lineHeight: 1.55, fontSize: 10, margin: '0 0 8px' }}>
-                      "Download Green Tea today — your first daily briefing is waiting for you tomorrow morning."
+                      "Download Green Tea today. Your first daily briefing is waiting for you tomorrow morning."
                     </div>
                     <p style={{ margin: 0, lineHeight: 1.55 }}>
-                      Short, action-oriented, and creates anticipation. The post is looking really strong now — ready to publish?
+                      Short, action-oriented, and creates anticipation. The post is looking really strong now. Ready to publish?
                     </p>
                   </div>
                 )},
