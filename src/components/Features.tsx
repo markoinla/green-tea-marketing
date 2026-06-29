@@ -1,4 +1,4 @@
-import { GitFork, Brain, Wrench, Clock, Share2, KeyRound } from 'lucide-react';
+import { GitFork, Brain, Wrench, Plug, Shapes, KeyRound } from 'lucide-react';
 
 const features = [
   {
@@ -12,19 +12,19 @@ const features = [
     desc: 'Not just chat. One coherent AI with full context of your workspace runs tasks in the background — tell it to pull competitor pricing every Monday morning, and it will.',
   },
   {
+    icon: Shapes,
+    title: 'Canvas, tables & docs',
+    desc: 'Far more than notes. Excalidraw canvases, editable data tables, HTML dashboards, and PDFs live beside your notes — and the agent can generate Word, Excel, and slides too.',
+  },
+  {
+    icon: Plug,
+    title: 'Connects to your tools',
+    desc: 'Link Google and Microsoft and the agent works from your real calendar, inbox, and Drive. Add MCP servers to reach almost anything else.',
+  },
+  {
     icon: Wrench,
     title: 'Skills & automations',
     desc: 'Build custom AI tools and workflows. Teach your AI coworker new tricks and make it work the way you do — no terminal required.',
-  },
-  {
-    icon: Clock,
-    title: 'Scheduled tasks',
-    desc: 'Recurring research, monitoring, and briefings that run on autopilot and write straight into your notes.',
-  },
-  {
-    icon: Share2,
-    title: 'From notes to published',
-    desc: 'Turn notes into reports, dashboards, and slides, then publish to a live interactive link. Hand clients a URL, not a PDF.',
   },
   {
     icon: KeyRound,

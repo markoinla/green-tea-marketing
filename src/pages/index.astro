@@ -4,6 +4,9 @@ import Features from '../components/Features';
 import TextBlock from '../components/TextBlock';
 import SkillsMockup from '../components/SkillsMockup';
 import ScheduledTasksMockup from '../components/ScheduledTasksMockup';
+import IntegrationsMockup from '../components/IntegrationsMockup';
+import ArtifactsMockup from '../components/ArtifactsMockup';
+import SharePublishMockup from '../components/SharePublishMockup';
 import ModelsMockup from '../components/ModelsMockup';
 import DownloadCTA from '../components/DownloadCTA';
 ---
@@ -127,13 +130,39 @@ import DownloadCTA from '../components/DownloadCTA';
 
     <TextBlock
       client:visible
+      label="Integrations"
+      heading="It works with the tools you already use."
+      body={[
+        "Connect your Google and Microsoft accounts and Green Tea's agent can read your calendar, search your inbox, and pull from your Drive — all read-only, all on your terms. That's what turns a generic assistant into one that actually knows your week: it can see the meeting you're prepping for and the email thread it relates to.",
+        "It's the difference between an AI that guesses and one that's grounded in your real schedule, mail, and files. Drop in an MCP server and you can extend that reach to almost any other service you rely on.",
+      ]}
+    >
+      <IntegrationsMockup client:visible />
+    </TextBlock>
+
+    <TextBlock
+      client:visible
+      label="Artifacts"
+      heading="Far more than notes."
+      body={[
+        "Green Tea isn't just a text editor. Ask for an interactive HTML report and watch it render live as the agent writes the code — then sketch a flow on an Excalidraw canvas, edit a spreadsheet in a real data grid, or drop in PDFs and images. Every artifact lives right alongside your notes in the same workspace.",
+        "And the agent builds them for you. Describe a dashboard of your campaign metrics or a diagram of your architecture and it generates the artifact in place — then turns your notes into Word docs, Excel sheets, and PowerPoint decks whenever you need to hand something off.",
+      ]}
+    >
+      <ArtifactsMockup client:visible />
+    </TextBlock>
+
+    <TextBlock
+      client:visible
       label="Publish"
       heading="Research, write, publish — without leaving your notes."
       body={[
         "Hand a client a URL, not a PDF. Green Tea turns your notes into a report, dashboard, or set of slides and publishes it to a live, interactive link they can actually explore — no separate design, deck, or hosting tool.",
-        "It closes the whole loop in one place: research a topic, generate the artifact, publish it. Everything is built from your notes and stays in your workspace, so it's always yours to update.",
+        "It closes the whole loop in one place: research a topic, generate the artifact, publish it. The link stays in sync with your notes, so a published page is always current — and it's still yours to update or take down anytime.",
       ]}
-    />
+    >
+      <SharePublishMockup client:visible />
+    </TextBlock>
 
     <TextBlock
       client:visible
